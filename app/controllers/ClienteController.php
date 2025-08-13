@@ -103,7 +103,7 @@ class ClienteController {
                 'renda_familiar_cliente' => $cliente->renda_familiar,
                 'acao' => 'editar'
             ];
-            $this->carregar_view('cliente/form', $dados); // CORREÇÃO: Carrega o form.php, não form_edit.php
+            $this->carregar_view('cliente/form', $dados);
         }
     }
     public function deletar($id) {
@@ -131,6 +131,7 @@ class ClienteController {
         require_once __DIR__ . '/../views/footer.php';
     }
 
+    // Método que gera o relátorio
     public function relatorios() {
         $periodo = isset($_GET['periodo']) ? $_GET['periodo'] : 'mes';
         $data_inicio_periodo = '';
@@ -162,6 +163,7 @@ class ClienteController {
         $this->carregar_view('cliente/relatorios', $dados);
     }
 
+    // Função tirada de um projeto
     public function validar_cpf($cpf) {
         $cpf = preg_replace('/[^0-9]/', '', (string) $cpf);
         
