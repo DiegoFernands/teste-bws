@@ -5,11 +5,11 @@
             <p><?= ($acao == 'adicionar') ? 'Preencha o formulário para cadastrar um novo cliente' : 'Altere os dados do cliente e salve'; ?></p>
             <form action="<?= ($acao == 'adicionar') ? URLROOT . '/cliente/adicionar' : URLROOT . '/cliente/editar/' . $id; ?>" method="post">
                 <div class="form-group">
-                    <label for="nome">Nome: <sup>*</sup></label>
+                    <label for="nome">Nome: </label>
                     <input type="text" name="nome" id="nome" class="form-control form-control-lg" maxlength="150" required value="<?= htmlspecialchars($nome_cliente); ?>">
                 </div>
                 <div class="form-group">
-                    <label for="cpf">CPF: <sup>*</sup></label>
+                    <label for="cpf">CPF: </label>
                     <input type="text" name="cpf" id="cpf" class="form-control form-control-lg" maxlength="11" minlength="11" pattern="[0-9]{11}" title="Somente 11 dígitos" required value="<?= htmlspecialchars($cpf_cliente); ?>">
                     <?php if (!empty($erro_cpf_formato)) : ?>
                         <div class="alert alert-danger mt-2"><?= $erro_cpf_formato; ?></div>
@@ -19,7 +19,7 @@
                     <?php endif; ?>
                 </div>
                 <div class="form-group">
-                    <label for="data_nascimento">Data de Nascimento: <sup>*</sup></label>
+                    <label for="data_nascimento">Data de Nascimento: </label>
                     <input type="date" name="data_nascimento" id="data_nascimento" class="form-control form-control-lg" required max="<?= date('Y-m-d'); ?>" value="<?= htmlspecialchars($data_nascimento_cliente); ?>">
                 </div>
                 <?php if ($acao == 'adicionar') : ?>
@@ -34,10 +34,10 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
+                    <div class="col text-center">
                         <input type="submit" value="Salvar" class="btn btn-success btn-block">
                     </div>
-                    <div class="col">
+                    <div class="col text-center">
                         <a href="<?= URLROOT; ?>/cliente/index" class="btn btn-secondary btn-block">Cancelar</a>
                     </div>
                 </div>
