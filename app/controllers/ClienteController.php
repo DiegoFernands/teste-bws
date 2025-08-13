@@ -117,7 +117,7 @@ class ClienteController {
     public function carregar_view($view_caminho, $dados_view = []) {
         extract($dados_view);
         
-        // Caminho corrigido para inclusão do header
+        // Caminho  para inclusão do header
         require_once __DIR__ . '/../views/header.php';
 
         $caminho_view_completo = __DIR__ . '/../views/' . $view_caminho . '.php';
@@ -127,7 +127,7 @@ class ClienteController {
             die('A view não existe: ' . $caminho_view_completo);
         }
         
-        // Caminho corrigido para inclusão do footer
+        // Caminho  para inclusão do footer
         require_once __DIR__ . '/../views/footer.php';
     }
 
