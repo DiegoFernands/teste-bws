@@ -5,7 +5,7 @@ require_once 'app/models/Cliente.php';
 
 // Pega a URL e a divide em partes
 $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
-$url = filter_var($url, FILTER_SANITIZE_URL);
+$url = filter_var($url);
 $url = explode('/', $url);
 
 // Define o controlador padrão
